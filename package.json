@@ -1,0 +1,22 @@
+{
+  "name": "chrome_extension_audio_transcription",
+  "version": "1.0.0",
+  "description": "Audio Transcription Chrome Extension enables real-time transcription of any audio playing in the current Chrome tab, utilizing cutting-edge ASR services like Speechmatics, Deepgram, and Soniox. It offers straightforward 'Start' and 'Stop' transcription controls and displays transcriptions as they're processed. The extension, ideal for developers, supports voice activity detection to optimize server requests. Configuration settings for each ASR service are easily manageable through a dedicated settings file.",
+  "main": "popup.html",
+  "scripts": {
+    "clean": "rimraf --glob dist/*",
+    "build": "npm run clean && node build.js && node .\\node_modules\\browserify\\bin\\cmd.js options.js -p esmify -o dist\\options.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "speechmatics": "^3.1.7"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "esmify": "^2.1.1",
+    "fs-extra": "^11.2.0",
+    "rimraf": "^5.0.5"
+  },
+  "license": "ISC"
+}
